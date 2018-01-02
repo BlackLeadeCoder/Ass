@@ -24,15 +24,18 @@ def logo():
 
 os.system('clear')
 logo()
-
-print "\033[1;33m\n[*] Wait few secound to start tor service....\033[0m"
-os.system('service tor restart')
-sleep(3)
-socks.set_default_proxy(socks.SOCKS5, "127.0.0.1", 9050)
-socket.socket = socks.socksocket
-print "\033[1;32m[*] connect tor success :\033[0m"
-print (requests.get('http://icanhazip.com')).content
-
+try:
+	print "\033[1;33m\n[*] Wait few secound to start tor service....\033[0m"
+	os.system('service tor restart')
+	sleep(3)
+	print "\033[1;32m[*] connect tor ....\033[0m"
+	socks.set_default_proxy(socks.SOCKS5, "127.0.0.1", 9050)
+	socket.socket = socks.socksocket
+	print (requests.get('http://icanhazip.com')).content
+	print "\033[1;32m[*] connect tor success :\033[0m"
+except:
+	print "\033[1;31m[-] connect tor failed ."
+	
 flag = 1
 
 open_ports = []
