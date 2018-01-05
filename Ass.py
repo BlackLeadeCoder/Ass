@@ -22,8 +22,13 @@ def logo():
 	print "\033[1;33m|__|__| \___| \___|\033[0m \n"
 	print "    \033[1;42mBy Black Leader\033[0m"
 
+print "\033[1;33m\n[*] Wait few secound to install tor... \033[0m"
+os.system('sudo apt-get install tor')
+
 os.system('clear')
 logo()
+
+
 try:
 	print "\033[1;33m\n[*] Wait few secound to start tor service....\033[0m"
 	os.system('service tor restart')
