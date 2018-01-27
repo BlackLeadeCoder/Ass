@@ -108,7 +108,7 @@ try:
 		sleep(0.04)
 		sys.stdout.write("\033[1;32m"+char+"\033[0m")
 		sys.stdout.flush()
-	y = "[+] Connecting to Port : \n"
+	y = "[+] Connecting to Ports : \n"
 	for char in y:
 		sleep(0.04)
 		sys.stdout.write("\033[1;32m"+char+"\033[0m")
